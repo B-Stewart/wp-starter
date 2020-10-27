@@ -1,0 +1,11 @@
+/*
+!.gitignore
+#!wp-config.php
+!.htaccess
+!movefile.yml
+!/wp-content
+/wp-content/*
+!/wp-content/themes
+!/wp-content/plugins
+/wp-content/plugins/*
+!/wp-content/plugins/svg-support

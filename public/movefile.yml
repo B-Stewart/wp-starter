@@ -1,0 +1,94 @@
+global:
+  sql_adapter: "wpcli"
+
+  exclude:
+    - '.git/'
+    - '.gitignore'
+    - '.gitmodules'
+    - '.env'
+    - 'node_modules/'
+    - 'bin/'
+    - 'tmp/*'
+    - 'Gemfile*'
+    - 'Movefile'
+    - 'movefile'
+    - 'movefile.yml'
+    - 'movefile.yaml'
+    - 'wp-config.php'
+    - 'wp-content/*.sql.gz'
+    - '*.orig'
+    - 'wp-content/uploads/backwpup*/*'
+    - 'wp-content/uploads/cache/*'
+    - 'wp-content/plugins/wordfence/*'
+    - 'wp-content/plugins/updraftplus/*'
+    - 'wp-content/updraft/*'
+    - 'wp-content/wflogs/*'
+    - 'wp-content/cache/*'
+    - '.htaccess'
+    - '.idea/'
+    - '.user.ini'
+    - 'gd-config.php'
+    - 'robots.txt'
+    - 'wp-snapshots/*'
+    - 'wp-admin/*'
+    - 'wp-includes/*'
+    - '.cache/'
+    - '.DS_Store'
+
+  forbid:
+    push:
+      db: true
+      plugins: true
+      languages: true
+      uploads: true
+      mu-plugins: true
+
+local:
+  vhost: "http://localhost:<%= ENV['LOCAL_SERVER_PORT'] %>"
+  wordpress_path: "/html/"
+  database:
+    name: "wordpress"
+    user: "root"
+    password: "wordpress"
+    host: "database"
+    mysqldump_options: "--hex-blob"
+
+staging:
+  vhost: "http://example.com"
+  wordpress_path: "domains/example.com/html"
+
+  database:
+    name: "db_name"
+    user: "db_user"
+    password: "12345"
+    host: "example.com"
+    port: 3306
+    mysqldump_options: "--hex-blob"
+    
+  ssh:
+    host: "example.com"
+    user: "bob"
+    #password: "pass that is manually input"
+
+  
+
+production:
+  vhost: "https://example.com"
+  wordpress_path: "/public_html"
+  wordpress_absolute_path: "/home/example/public_html"
+
+  # database:
+  #   name: "db_name"
+  #   user: "username"
+  #   password: "password"
+  #   host: "localhost"
+  #   port: 3306
+  #   mysqldump_options: "--hex-blob"
+
+  # ftp:
+  #   host: "192.245.157.84"
+  #   user: "user@example.com"
+  #   password: "12345"
+  #   port: 21
+  #   passive: true
+  #   scheme: "ftp"

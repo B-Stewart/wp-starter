@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "install": "npm run setup",
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "docker-compose up --no-start",
+    "setup:frontend": "cd ./public/wp-content/themes/underscores-bootstrap && npm i",
+    "start": "docker-compose up -d && npm run start:frontend",
+    "start:frontend": "cd ./public/wp-content/themes/underscores-bootstrap && npm start",
+    "build": "cd ./public/wp-content/themes/underscores-bootstrap && npm run build",
+    "stop": "docker-compose down",
+    "wordmove": "docker-compose exec wordmove bash"
+  }
+}

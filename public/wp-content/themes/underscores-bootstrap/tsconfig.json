@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"module": "ES2015",
+		"noImplicitAny": false,
+		"target": "ES5",
+		"moduleResolution": "Node",
+		"allowJs": true
+	},
+	"files": ["static/scripts/index.d.ts"],
+	"include": ["static/**/*"],
+	"exclude": ["node_modules"]
+}
