@@ -1,0 +1,38 @@
+@each $key, $color in $theme-colors {
+  .has-#{$key}-background-color {
+    background-color: $color;
+  }
+
+  .has-#{$key}-color {
+    color: $color;
+  }
+}
+
+:root {
+  --scrollbar-width: 0px;
+}
+
+// Dumb hack because vw isn't always viewport width across platforms so we need js
+// https://github.com/WordPress/gutenberg/issues/8289
+// Above lines are for IE11
+.alignfull {
+  width: 100vw;
+  width: calc(100vw - var(--scrollbar-width));
+  margin: 0 calc(49% - 50vw);
+  margin: 0 calc(50% - 50vw + var(--scrollbar-width) / 2);
+}
+
+// TODO: .alignwide
+
+.wp-block-image.alignfull {
+  max-width: inherit;
+}
+
+.wp-block-cover__inner-container {
+  padding-top: map-get($spacers, 4);
+  padding-bottom: map-get($spacers, 4);
+}
+
+p:only-child {
+  margin-bottom: 0;
+}

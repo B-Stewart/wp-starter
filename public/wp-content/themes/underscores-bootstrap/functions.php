@@ -48,11 +48,11 @@ if ( ! function_exists( 'underscores_bootstrap_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'underscores-bootstrap' ),
-			)
-		);
+		// register_nav_menus(
+		// 	array(
+		// 		'menu-1' => esc_html__( 'Primary', 'underscores-bootstrap' ),
+		// 	)
+		// );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -102,6 +102,8 @@ if ( ! function_exists( 'underscores_bootstrap_setup' ) ) :
 		);
 	}
 endif;
+
+require_once get_template_directory() . '/inc/theme.php';
 add_action( 'after_setup_theme', 'underscores_bootstrap_setup' );
 
 /**

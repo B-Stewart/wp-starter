@@ -19,6 +19,7 @@ An opinionated boilerplate theme for modern WordPress developers.
 - Add auto acf
 - Add default theme?
 - Add Screenshot
+- Automate theme.php to match scss
 - Add process to update bootstrap nav walker
 - How to load bootstrap js from bundle
 - Finish npm publish commands
