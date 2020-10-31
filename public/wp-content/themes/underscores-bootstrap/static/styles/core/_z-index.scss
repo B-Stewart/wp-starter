@@ -1,0 +1,7 @@
+$zindicies: (1, 5, 10, 20, 50, 100, 500, 1000);
+
+@each $layer in $zindicies {
+  .z-index-#{$layer} {
+    z-index: $layer;
+  }
+}

@@ -1,4 +1,5 @@
 @import "styles/variables"; // Add your variables into this file. Also add variables to overwrite other SASS variables (e.g. Bootstrap)
 @import "styles/vendor/bootstrap"; // Loads Customized bootstrap bundle
 @import "styles/core/theme";
+@import "styles/core/z-index";
 @import "styles/index";

@@ -33,6 +33,43 @@
   padding-bottom: map-get($spacers, 4);
 }
 
-p:only-child {
+p:only-child,
+h1:only-child,
+h2:only-child,
+h3:only-child,
+h4:only-child,
+h5:only-child,
+h6:only-child {
   margin-bottom: 0;
+}
+
+// WP Forms code
+
+.wp-block-column:not(:first-child) {
+  margin-left: 16px;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field:first-child {
+  padding-top: 0;
+}
+
+.wpforms-container.wpforms-container-full .wpforms-form input[type="submit"],
+.wpforms-container.wpforms-container-full .wpforms-form button[type="submit"],
+.wpforms-container.wpforms-container-full .wpforms-form .wpforms-page-button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+div.wpforms-container-full form.wpforms-form div.wpforms-field-container {
+  input,
+  textarea {
+    border-radius: 4px !important;
+    &:focus {
+      border-color: $primary !important;
+    }
+  }
+}
+
+.wpforms-field-checkbox {
+  color: $primary;
 }

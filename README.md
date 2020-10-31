@@ -1,4 +1,5 @@
 # Wordpress Starter
+
 An opinionated boilerplate theme for modern WordPress developers.
 
 - Bootstrap 4
@@ -10,7 +11,7 @@ An opinionated boilerplate theme for modern WordPress developers.
 1. `> npm run setup` to set up docker images and front end dependencies (this may take a while)
 2. `> npm start` to start up a local dev server
 3. Open localhost:3000 or your designated port to set up the initial wordpress install (username / pass / etc.)
-4. 
+4.
 
 ## TODO:
 
@@ -23,6 +24,7 @@ An opinionated boilerplate theme for modern WordPress developers.
 - Add process to update bootstrap nav walker
 - How to load bootstrap js from bundle
 - Finish npm publish commands
+- Comments template
 - PHPMyAdmin
 - Composer
 - FTP

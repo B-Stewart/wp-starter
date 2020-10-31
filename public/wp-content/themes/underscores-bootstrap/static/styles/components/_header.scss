@@ -1,0 +1,47 @@
+$headerContentHeight: 3.75rem;
+$headerPadding: map-get($spacers, 1);
+$headerHeight: $headerContentHeight + ($headerPadding * 2);
+
+.header {
+  z-index: 900;
+
+  &.position-fixed + .fixed-header-spacer {
+    height: $headerHeight;
+  }
+
+  .navbar {
+    padding: $headerPadding 0;
+  }
+
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+
+  .custom-logo-link {
+    // Height of image / header
+    display: inline-block;
+
+    .custom-logo {
+      width: auto;
+      max-height: $headerContentHeight;
+    }
+  }
+
+  .nav-link {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar-expand-md > .container,
+  .navbar-expand-md > .container-fluid,
+  .navbar-expand-md > .container-sm,
+  .navbar-expand-md > .container-md,
+  .navbar-expand-md > .container-lg,
+  .navbar-expand-md > .container-xl {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}

@@ -42,16 +42,15 @@ add_theme_support( 'editor-color-palette', array(
 // Add wide and full width alignment options
 add_theme_support( 'align-wide' );
 
-add_action( 'after_setup_theme', 'post_theme_setup' );
-
 // Add extra large image size
-function post_theme_setup() {
-    add_image_size( 'extra_large', 2000, 9999 ); // 300 pixels wide (and unlimited height)
+function add_extra_large_size() {
+	add_image_size( 'extra_large', 2000, 9999 ); // 2000 pixels wide (and unlimited height)
 }
-add_filter( 'image_size_names_choose', 'custom_image_sizes' );
+add_action( 'after_setup_theme', 'add_extra_large_size' );
 
 function custom_image_sizes( $sizes ) {
 	return array_merge( $sizes, array(
 		'extra_large' => __('Extra Large'),
 		) );
-}
+	}
+add_filter( 'image_size_names_choose', 'custom_image_sizes' );

@@ -123,20 +123,20 @@ add_action( 'after_setup_theme', 'underscores_bootstrap_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function underscores_bootstrap_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'underscores-bootstrap' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'underscores-bootstrap' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'underscores_bootstrap_widgets_init' );
+// function underscores_bootstrap_widgets_init() {
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__( 'Sidebar', 'underscores-bootstrap' ),
+// 			'id'            => 'sidebar-1',
+// 			'description'   => esc_html__( 'Add widgets here.', 'underscores-bootstrap' ),
+// 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</section>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
+// }
+// add_action( 'widgets_init', 'underscores_bootstrap_widgets_init' );
 
 /**
  * Set up static
