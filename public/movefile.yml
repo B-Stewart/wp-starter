@@ -2,38 +2,38 @@ global:
   sql_adapter: "wpcli"
 
   exclude:
-    - '.git/'
-    - '.gitignore'
-    - '.gitmodules'
-    - '.env'
-    - 'node_modules/'
-    - 'bin/'
-    - 'tmp/*'
-    - 'Gemfile*'
-    - 'Movefile'
-    - 'movefile'
-    - 'movefile.yml'
-    - 'movefile.yaml'
-    - 'wp-config.php'
-    - 'wp-content/*.sql.gz'
-    - '*.orig'
-    - 'wp-content/uploads/backwpup*/*'
-    - 'wp-content/uploads/cache/*'
-    - 'wp-content/plugins/wordfence/*'
-    - 'wp-content/plugins/updraftplus/*'
-    - 'wp-content/updraft/*'
-    - 'wp-content/wflogs/*'
-    - 'wp-content/cache/*'
-    - '.htaccess'
-    - '.idea/'
-    - '.user.ini'
-    - 'gd-config.php'
-    - 'robots.txt'
-    - 'wp-snapshots/*'
-    - 'wp-admin/*'
-    - 'wp-includes/*'
-    - '.cache/'
-    - '.DS_Store'
+    - ".git/"
+    - ".gitignore"
+    - ".gitmodules"
+    - ".env"
+    - "node_modules/"
+    - "bin/"
+    - "tmp/*"
+    - "Gemfile*"
+    - "Movefile"
+    - "movefile"
+    - "movefile.yml"
+    - "movefile.yaml"
+    - "wp-config.php"
+    - "wp-content/*.sql.gz"
+    - "*.orig"
+    - "wp-content/uploads/backwpup*/*"
+    - "wp-content/uploads/cache/*"
+    - "wp-content/plugins/wordfence/*"
+    - "wp-content/plugins/updraftplus/*"
+    - "wp-content/updraft/*"
+    - "wp-content/wflogs/*"
+    - "wp-content/cache/*"
+    - ".htaccess"
+    - ".idea/"
+    - ".user.ini"
+    - "gd-config.php"
+    - "robots.txt"
+    - "wp-snapshots/*"
+    - "wp-admin/*"
+    - "wp-includes/*"
+    - ".cache/"
+    - ".DS_Store"
 
   forbid:
     push:
@@ -47,46 +47,48 @@ local:
   vhost: "http://localhost:<%= ENV['LOCAL_SERVER_PORT'] %>"
   wordpress_path: "/html/"
   database:
-    name: "wordpress"
-    user: "root"
-    password: "wordpress"
-    host: "database"
+    name: "<%= ENV['LOCAL_DB_NAME'] %>"
+    user: "<%= ENV['LOCAL_DB_USER'] %>"
+    password: "<%= ENV['LOCAL_DB_PASS'] %>"
+    host: "<%= ENV['LOCAL_DB_HOST'] %>"
     mysqldump_options: "--hex-blob"
 
 staging:
-  vhost: "http://example.com"
-  wordpress_path: "domains/example.com/html"
+  vhost: "<%= ENV['STAGING_HOST'] %>"
+  wordpress_path: "<%= ENV['STAGING_WORDPRESS_PATH'] %>"
 
   database:
-    name: "db_name"
-    user: "db_user"
-    password: "12345"
-    host: "example.com"
-    port: 3306
+    name: "<%= ENV['STAGING_DB_NAME'] %>"
+    user: "<%= ENV['STAGING_DB_USER'] %>"
+    password: "<%= ENV['STAGING_DB_PASS'] %>"
+    host: "<%= ENV['STAGING_DB_HOST'] %>"
+    port: <%= ENV['STAGING_DB_PORT'] %>
     mysqldump_options: "--hex-blob"
-    
+
   ssh:
-    host: "example.com"
-    user: "bob"
+    host: "<%= ENV['STAGING_SSH_HOST'] %>"
+    user: "<%= ENV['STAGING_SSH_USER'] %>"
     #password: "pass that is manually input"
 
-  
-
 production:
-  vhost: "https://example.com"
-  wordpress_path: "/public_html"
-  wordpress_absolute_path: "/home/example/public_html"
+  vhost: "<%= ENV['PROD_HOST'] %>"
+  wordpress_path: "<%= ENV['PROD_WORDPRESS_PATH'] %>"
 
-  # database:
-  #   name: "db_name"
-  #   user: "username"
-  #   password: "password"
-  #   host: "localhost"
-  #   port: 3306
-  #   mysqldump_options: "--hex-blob"
+  database:
+    name: "<%= ENV['PROD_DB_NAME'] %>"
+    user: "<%= ENV['PROD_DB_USER'] %>"
+    password: "<%= ENV['PROD_DB_PASS'] %>"
+    host: "<%= ENV['PROD_DB_HOST'] %>"
+    port: <%= ENV['PROD_DB_PORT'] %>
+    mysqldump_options: "--hex-blob"
+
+  ssh:
+    host: "<%= ENV['PROD_SSH_HOST'] %>"
+    user: "<%= ENV['PROD_SSH_USER'] %>"
+    #password: "pass that is manually input"
 
   # ftp:
-  #   host: "192.245.157.84"
+  #   host: "127.0.0.1"
   #   user: "user@example.com"
   #   password: "12345"
   #   port: 21

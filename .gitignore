@@ -2,3 +2,4 @@
 .vscode
 error_log
 database/
+.env

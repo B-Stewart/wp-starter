@@ -7,6 +7,13 @@
  * @package Underscores_Bootstrap
  */
 
+// Utilities
+function console_log($data) {
+	$json = json_encode($data);
+
+	echo "<script>var php_debug = " . $json . "; console.log('PHP', php_debug);</script>";
+}
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -183,3 +190,8 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'underscores_bootstrap' ),
 ) );
+
+/**
+ * Load ACF
+ */
+require_once get_template_directory() . '/inc/advanced-custom-fields.php';

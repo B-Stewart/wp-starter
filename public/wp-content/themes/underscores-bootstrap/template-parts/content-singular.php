@@ -20,9 +20,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 		<div class="overlay z-index-5"></div>
 	</div>
-	<div class="container">
-		<div>
-			<?php the_content(); ?>
-		</div>
+	<div class="container main-container">
+		<?php the_content(); ?>
 	</div>
 </article>

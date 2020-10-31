@@ -28,9 +28,37 @@
   max-width: inherit;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .wp-block-cover__inner-container {
   padding-top: map-get($spacers, 4);
   padding-bottom: map-get($spacers, 4);
+}
+
+.h1-font-size {
+  font-size: $h1-font-size;
+}
+
+.h2-font-size {
+  font-size: $h2-font-size;
+}
+
+.h3-font-size {
+  font-size: $h3-font-size;
+}
+
+.h4-font-size {
+  font-size: $h4-font-size;
+}
+
+.h5-font-size {
+  font-size: $h5-font-size;
+}
+
+.h6-font-size {
+  font-size: $h6-font-size;
 }
 
 p:only-child,
@@ -72,4 +100,11 @@ div.wpforms-container-full form.wpforms-form div.wpforms-field-container {
 
 .wpforms-field-checkbox {
   color: $primary;
+}
+
+.main-container {
+  > *:not(.alignfull) {
+    margin-top: map-get($spacers, 4);
+    margin-bottom: map-get($spacers, 4);
+  }
 }
