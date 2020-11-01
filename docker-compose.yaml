@@ -51,6 +51,11 @@ services:
       # - ./config/lftp.conf:/etc/lftp.conf
     environment:
       LOCAL_SERVER_PORT: "${LOCAL_SERVER_PORT}"
+      LOCAL_DB_NAME: "${LOCAL_DB_NAME}"
+      LOCAL_DB_USER: "${LOCAL_DB_USER}"
+      LOCAL_DB_PASS: "${LOCAL_DB_PASS}"
+      LOCAL_DB_HOST: "${LOCAL_DB_HOST}"
+      LOCAL_DB_PORT: "${LOCAL_DB_PORT}"
       STAGING_HOST: "${STAGING_HOST}"
       STAGING_WORDPRESS_PATH: "${STAGING_WORDPRESS_PATH}"
       STAGING_DB_NAME: "${STAGING_DB_NAME}"
